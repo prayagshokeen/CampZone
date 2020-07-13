@@ -56,6 +56,7 @@ app.use(commentRoutes);
 //   ********db.campgrounds.drop() is used to delete all the data stored in the data base
 
 
-app.listen(3000, function(){
-	console.log("Yelp Camp Server has started!!!!");
-});
+ var port = process.env.PORT || 3000;
+ app.listen(port, function () {
+  console.log("Server Has Started!");
+ });
