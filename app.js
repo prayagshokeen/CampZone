@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
@@ -12,8 +14,9 @@ var Comment = require("./models/comment"),
    User = require("./models/user");
 
 var commentRoutes  = require("./Routes/comments"),
- campgroundRoutes = require("./Routes/campgrounds"),
-        authRoutes = require("./Routes/auth");
+    campgroundRoutes = require("./Routes/campgrounds"),
+	reviewRoutes     = require("./Routes/review"),
+    authRoutes = require("./Routes/auth");
 
 //seedDb();
 mongoose.connect("mongodb+srv://YelpCamp:jaskhshokeen@cluster0.5exye.mongodb.net/<dbname>?retryWrites=true&w=majority",  { useNewUrlParser: true ,  useUnifiedTopology: true });
@@ -52,6 +55,7 @@ app.use(function(req, res, next){
 app.use(campgroundRoutes);
 app.use(authRoutes);
 app.use(commentRoutes);
+app.use("/campgrounds/:id/reviews", reviewRoutes);
 
 //   ********db.campgrounds.drop() is used to delete all the data stored in the data base
 

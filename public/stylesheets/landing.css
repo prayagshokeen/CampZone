@@ -37,22 +37,22 @@ body {
   animation: imageAnimation 20s linear infinite; 
 }
 .slideshow li:nth-child(1) { 
-  background-image: url(https://images.unsplash.com/photo-1594612750252-939888434c0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80) 
+  background-image: url(https://wallpapercave.com/wp/wp1857474.jpg) 
 }
 .slideshow li:nth-child(2) { 
-  background-image: url(https://images.unsplash.com/photo-1487730116645-74489c95b41b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+  background-image: url(https://wallpapercave.com/wp/wp1857443.jpg);
   animation-delay: 4s; 
 }
 .slideshow li:nth-child(3) { 
-  background-image: url(https://images.unsplash.com/photo-1591373894845-53da22b7c487?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+  background-image: url(https://www.itl.cat/pngfile/big/301-3012379_camping-wallpaper-hd.jpg);
   animation-delay: 8s; 
 }
 .slideshow li:nth-child(4) { 
-  background-image: url(https://images.unsplash.com/photo-1533243367503-0b7337004671?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
+  background-image: url(https://wallpapercave.com/wp/wp1857440.jpg);
   animation-delay: 12s; 
 }
 .slideshow li:nth-child(5) { 
-  background-image: url(https://images.unsplash.com/photo-1466220549276-aef9ce186540?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+  background-image: url(https://wallpapercave.com/wp/wp1857439.jpg);
   animation-delay: 16s; 
 }
 @keyframes imageAnimation { 

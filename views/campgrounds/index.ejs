@@ -8,11 +8,32 @@
           <p>View our hand-picked campgrounds from all over the world</p>
           <p>
             <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add new Campground</a>
-           </p>    
+          </p>
+		  <p>
+			<form action="/campgrounds" method="GET" class = "form-inline">
+				<div class="form-group">
+					  <input type="text" name="search" placeholder="Campground Search..." class="form-control">
+					  <input type="submit" value="search" class="btn btn-default">
+				</div>
+		    </form>
+		  </p>
        </div>
   </header>
 
-   <div class="row text-center" style="display:flex; flex-wrap:wrap;">    
+   <div class="row text-center" style="display:flex; flex-wrap:wrap;"> 
+	   <% if(noMatch !== null) { %>
+		   <div class="col-md-12">
+				 <h3><%= noMatch %></h3>
+				 <p>
+					<form action="/campgrounds" method="GET" class="form-inline">
+						<div class="form-group">
+							<input type="text" name="search" placeholder="Campground search..." class="form-control">
+							<input type="submit" value="Search" class="btn btn-default">
+						</div>
+					</form>
+				</p>
+			 </div>
+		<% } else {%>
       <% campgrounds.forEach(function(campground){ %>
       	<div class="col-md-3 col-sm-6">
       	   <div class="thumbnail">
@@ -22,6 +43,15 @@
 				  <div>
                      <span class="badge label-primary"><i class="fas fa-thumbs-up"></i> <%= campground.likes.length %></span>
                   </div>
+				  <% if (campground.rating === 0) { %>
+                    <em>No reviews yet.</em>
+                    <% } else { %>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star <% if (campground.rating > 1.5) { %> checked <% } %>"></span>
+                    <span class="fa fa-star <% if (campground.rating > 2.5) { %> checked <% } %>"></span>
+                    <span class="fa fa-star <% if (campground.rating > 3.5) { %> checked <% } %>"></span>
+                    <span class="fa fa-star <% if (campground.rating > 4.5) { %> checked <% } %>"></span>
+                  <% } %>
       	      </div>
               <p>
                <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
@@ -74,6 +104,7 @@
     </ul>
     <% } %>
 </div>
+<% } %>
 </div>
 
 <%- include("../partials/footer") %>
