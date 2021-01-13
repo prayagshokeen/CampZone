@@ -32,8 +32,8 @@ var upload = multer({ storage: storage, fileFilter: imageFilter})
 var cloudinary = require('cloudinary');
 cloudinary.config({ 
   cloud_name: 'di5swgl9o', 
-  api_key: 936698783268746, 
-  api_secret: '9yIivhUtP0pV3ccQ7sS7zCsR9q4'
+  api_key: 936698783268746,
+  api_secret: process.env.CNKSECRET
 });
 //---------------------------------------------------
 
@@ -77,7 +77,7 @@ router.post("/register", upload.single('image'), function(req, res){
 				return res.redirect("/register");
 			}
 			passport.authenticate("local")(req, res, function(){
-				req.flash("success", "Welcome to YelpCamp " + user.username);
+				req.flash("success", "Welcome to CampZone " + user.username);
 				res.redirect("/campgrounds");
 			});
 		});
@@ -146,7 +146,7 @@ router.post('/forgot', function(req, res, next) {
         service: 'Gmail', 
         auth: {
           user: 'jakshshokeen410@gmail.com',
-          pass: 'waervhcximztuqgg'
+          pass: process.env.GMAILPW
         }
       });
       var mailOptions = {
@@ -210,7 +210,7 @@ router.post('/reset/:token', function(req, res) {
         service: 'Gmail', 
         auth: {
           user: 'jakshshokeen410@gmail.com',
-          pass: 'waervhcximztuqgg'
+          pass: process.env.GMAILPW
         }
       });
       var mailOptions = {

@@ -26,7 +26,7 @@ var cloudinary = require('cloudinary');
 cloudinary.config({ 
   cloud_name: 'di5swgl9o', 
   api_key: 936698783268746, 
-  api_secret: '9yIivhUtP0pV3ccQ7sS7zCsR9q4'
+  api_secret: process.env.CNKSECRET
 });
 //---------------------------------------------------
 
@@ -60,7 +60,7 @@ router.get("/campgrounds", function(req, res){
 			});
 		});
 	}else {
-		var perPage = 4;
+		var perPage = 8;
 		var pageQuery = parseInt(req.query.page);
 		var pageNumber = pageQuery ? pageQuery : 1;
 		Campground.find({}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
