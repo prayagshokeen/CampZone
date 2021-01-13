@@ -33,7 +33,7 @@ var cloudinary = require('cloudinary');
 cloudinary.config({ 
   cloud_name: 'di5swgl9o', 
   api_key: 936698783268746,
-  api_secret: process.env.CNKSECRET
+  api_secret: '9yIivhUtP0pV3ccQ7sS7zCsR9q4'
 });
 //---------------------------------------------------
 
@@ -146,7 +146,7 @@ router.post('/forgot', function(req, res, next) {
         service: 'Gmail', 
         auth: {
           user: 'jakshshokeen410@gmail.com',
-          pass: process.env.GMAILPW
+          pass: 'Prayag@987#Shokeen$$'
         }
       });
       var mailOptions = {
@@ -210,7 +210,7 @@ router.post('/reset/:token', function(req, res) {
         service: 'Gmail', 
         auth: {
           user: 'jakshshokeen410@gmail.com',
-          pass: process.env.GMAILPW
+          pass: 'Prayag@987#Shokeen$$'
         }
       });
       var mailOptions = {

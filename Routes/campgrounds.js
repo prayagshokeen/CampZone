@@ -26,7 +26,7 @@ var cloudinary = require('cloudinary');
 cloudinary.config({ 
   cloud_name: 'di5swgl9o', 
   api_key: 936698783268746, 
-  api_secret: process.env.CNKSECRET
+  api_secret: '9yIivhUtP0pV3ccQ7sS7zCsR9q4'
 });
 //---------------------------------------------------
 
